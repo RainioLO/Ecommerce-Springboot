@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminDto {
+public class AdminDto { // see register.html line 46 set the limit
     @Size(min = 3, max = 10, message = "First name contains 3-10 characters")
     private String firstName;
     @Size(min = 3, max = 10, message = "Last name contains 3-10 characters")

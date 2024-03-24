@@ -54,6 +54,7 @@ public class AdminConfiguration {
                                 .loginProcessingUrl("/do-login")
                                 .defaultSuccessUrl("/index", true)
                                 .permitAll()
+                                .failureForwardUrl("/login?error")
                 )
                 .logout(logout ->
                         logout.invalidateHttpSession(true)
