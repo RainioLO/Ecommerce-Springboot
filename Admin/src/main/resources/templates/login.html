@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<html lang="en">
 
 <head>
 
@@ -41,13 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <div th:if = "${param.error}" class = "alert alert-danger text-center">
-                                        Invalid username or password
-                                    </div>
-                                    <div th:if = "${param.logout}" class = "alert alert-danger text-center">
-                                        You have been logged out!
-                                    </div>
-                                    <form class="user" th:action = "@{/do-login}" method = "POST">
+                                    <form class="user">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -57,9 +51,16 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <button type = "submit" class="btn btn-primary btn-user btn-block">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </button>
+                                        </a>
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
@@ -70,10 +71,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" th:href= "@{/forgot-password}" href = "forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" th:href= "@{/register}" href ="register.html">Create an Account!</a>
+                                        <a class="small" href="register.html">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
