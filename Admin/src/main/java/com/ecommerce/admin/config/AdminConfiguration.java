@@ -28,7 +28,6 @@ public class AdminConfiguration {
         return new BCryptPasswordEncoder();
     }
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder
@@ -51,10 +50,10 @@ public class AdminConfiguration {
                 )
                 .formLogin(login ->
                         login.loginPage("/login")
-                                .loginProcessingUrl("/do-login")
+                                .loginProcessingUrl("/do-login") //hidden in the service layer
                                 .defaultSuccessUrl("/index", true)
-                                .permitAll()
                                 .failureForwardUrl("/login?error")
+                                .permitAll()
                 )
                 .logout(logout ->
                         logout.invalidateHttpSession(true)

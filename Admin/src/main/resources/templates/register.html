@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,34 +36,56 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <div th:if = "${emailError}">
+                                <p class= "alert alert-danger" th:text = "${emailError}"></p>
+                            </div>
+                            <div th:if = "${errors}">
+                                <p class= "alert alert-danger" th:text = "${errors}"></p>
+                            </div>
+                            <div th:if = "${success}">
+                                <p class= "alert alert-success" th:text = "${success}"></p>
+                            </div>
+                            <div th:if = "${passwordError}">
+                                <p class= "alert alert-danger" th:text = "${passwordError}"></p>
+                            </div>
+                            <form th:action = "@{/register-new}" th:object = "${adminDto}" method = "POST">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input type="text" class="form-control form-control-user" th:field="*{firstName}" id="exampleFirstName"
                                             placeholder="First Name">
+                                        <div class = "alert alert-danger" th:if = "${#fields.hasErrors('firstName')}"
+                                             th:errors = "*{firstName}"
+                                        ></div>
                                     </div>
+
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                        <input type="text" th:field= "*{lastName}" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="Last Name">
+                                        <div class = "alert alert-danger" th:if = "${#fields.hasErrors('lastName')}"
+                                             th:errors = "*{lastName}"
+                                        ></div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                    <input type="email" th:field = "*{username}" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Username">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" th:field = "*{password}" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password">
+                                        <div class = "alert alert-danger" th:if = "${#fields.hasErrors('password')}"
+                                             th:errors = "*{password}"
+                                        ></div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" th:field = "*{repeatPassword}" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <button type = "submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
@@ -74,10 +96,10 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" th:href = "@{forgot-password}" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" th:href = "@{login}" href="login.html">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

@@ -74,7 +74,7 @@ public class LoginController {
                 System.out.println("success");
                 model.addAttribute("success", "Register successfully!");
                 // session.setAttribute("message", "Register successfully!");
-                model.addAttribute("adminDto", adminDto);
+                model.addAttribute("adminDto", adminDto); // see register.html line 42
             } else {
                 model.addAttribute("adminDto", adminDto);
                 model.addAttribute("passwordError", "Your password maybe wrong! Check again !");
