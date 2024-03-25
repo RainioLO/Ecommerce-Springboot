@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3286e6f2-824d-4d12-924c-288f15d7108e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/config/AdminConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/config/AdminConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/dto/AdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/dto/AdminDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +49,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.AdminApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rain/github/ecommerce/Ecommerce-Springboot/Admin/src/main/resources/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rain/github/Ecommerce-Springboot&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -109,7 +103,9 @@
       <workItem from="1711249455334" duration="3482000" />
       <workItem from="1711252966930" duration="25000" />
       <workItem from="1711253566191" duration="22704000" />
-      <workItem from="1711369830698" duration="442000" />
+      <workItem from="1711369830698" duration="1012000" />
+      <workItem from="1711370861114" duration="16000" />
+      <workItem from="1711371059752" duration="401000" />
     </task>
     <servers />
   </component>
