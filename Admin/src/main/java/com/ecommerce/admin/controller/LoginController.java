@@ -34,15 +34,15 @@ public class LoginController {
     public String home(){
         return "index";
     }
-//
+
     @GetMapping("/register") // when someone call this, new a AdminDto
-    public String register(Model model){
-        model.addAttribute("adminDto", new AdminDto());
+    public String register(Model model) {
+        model.addAttribute("adminDto", new AdminDto()); // new a AdminDTO and treat it as the attribute of this page
         return "register";
     }
 
     @GetMapping("/forgot-password")
-    public String forgotPassword(Model model){
+    public String forgotPassword(Model model){ //add model, link model to AdminDto()
         return "forgot-password";
     }
 
@@ -56,7 +56,7 @@ public class LoginController {
             if (result.hasErrors()){
                 model.addAttribute("adminDto", adminDto); // adding from outside
                 result.toString();
-                return "register";
+                return "register"; //return the html
             }
             String username = adminDto.getUsername();
             Admin admin = adminService.findByUsername(username); // get the admin by DTO
