@@ -26,23 +26,27 @@ public class LoginController {
     private BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
-    public String loginForm(){
+    public String loginForm(Model model){
+        model.addAttribute("title", "Login"); // see fragments.html, login.html line 4
         return "login";
     }
 
     @RequestMapping("/index")
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("title", "Home Page"); // see fragments.html
         return "index";
     }
 
     @GetMapping("/register") // when someone call this, new a AdminDto
     public String register(Model model) {
+        model.addAttribute("title", "Register"); // see fragments.html
         model.addAttribute("adminDto", new AdminDto()); // new a AdminDTO and treat it as the attribute of this page
         return "register";
     }
 
     @GetMapping("/forgot-password")
     public String forgotPassword(Model model){ //add model, link model to AdminDto()
+        model.addAttribute("title", "Forgot Password"); // see fragments.html
         return "forgot-password";
     }
 

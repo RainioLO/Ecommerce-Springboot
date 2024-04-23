@@ -54,7 +54,7 @@ public class AdminConfiguration{
                         login.loginPage("/login")
                                 .loginProcessingUrl("/do-login") //hidden in the service layer
                                 .defaultSuccessUrl("/index", true)
-                                .failureForwardUrl("/login?error")
+                                // .failureForwardUrl("/login?error") // if added, wrong...
                                 .permitAll()
                 )
                 .logout(logout ->

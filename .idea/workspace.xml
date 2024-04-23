@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3286e6f2-824d-4d12-924c-288f15d7108e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/buttons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/cards.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/charts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/tables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-animation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-border.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-other.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/config/AdminConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/config/AdminConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
