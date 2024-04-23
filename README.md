@@ -1,7 +1,7 @@
-# Ecommerce-Springboot
+# Ecommerce by Springboot
 ___
-## 23/04/2024
-### 1. Log-out function
+## <b> 23/04/2024 </b>
+#### 1. Log-out function
     Location: LoginController line 60
     .logoutSuccessUrl("/login?logout") --> locate at index.html
     --> redirect to Login.html with <a class="btn btn-primary" 
@@ -10,14 +10,18 @@ ___
         You have been logged out!
     </div> # login.html line 47
 
-### 2. fragments handling
+#### 2. fragments handling
     <head th:fragment="header"> -- fragments.html
     <head th:replace="fragments :: header"> -- used in forgot-password.html, etc 
     </head>
 
-
-
-
-
-
 <br> <!-- Empty line or line break -->
+
+###### Github
+git commit --amend --author="New Committer Name <newcommitter@example.com>"
+
+git push --force
+
+
+
+
