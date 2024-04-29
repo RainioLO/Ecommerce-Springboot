@@ -21,10 +21,15 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category save(Category category) {
-        Category categorySave = new Category(category.getName()); // new an object and save
-        // categorySave.set_deleted(true);
-        return categoryRepository.save(categorySave);
+    public Category save(Category category) { // someone pass by model attribute , an object
+        try{
+            Category categorySave = new Category(category.getName()); // new an object and save
+            // categorySave.set_deleted(true);
+            return categoryRepository.save(categorySave);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

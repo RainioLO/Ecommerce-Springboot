@@ -38,12 +38,34 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - Many to one for Product to Category
     - CategoryRepository, ProductRepo for data entry
     - service layer -> call repo to help data treatment
+    - add the logout function in fragments
+    - topbar index.html line 144 
+    - sidebar index.html line 13
 
 ### 2.1 Category
     - Model (Category)
     - repo(categoryRepo)
     - controller (GetMapping: /categories)
     - model.addAttribute("title", "Category"); bind with the class Category
+    
+    - model.addAttribute("categories", categories);
+      model.addAttribute("size", categories.size());
+      model.addAttribute("title", "Category");
+
+    - add constraints if categories size = 0
+      <div th:if = "${size == 0}"></div> 
+      categories.html line 26/30
+
+    - modal bootstrap categories.html line 29/63
+    - line 65 add th:action with the action "add-category" in PostMapping
+
+    - @PostMapping("/add-category") redirect:/categories --> @ModelAttribute("categoryNew") Category category
+    - <form th:action="@{/add-category}" method="post" th:object="${categoryNew}"> add the route
+    - <input type="text" class="form-control" th:field = "*{name}" id="recipient-name"> add the attribute
+    - --> line 65,74.79 submit -> action -> method -> object
+        <button type="submit" class="btn btn-primary">Save</button>
+
+
 
 #### 2.1.1 Category Layout
     - index.html line 51 <a class="collapse-item" href="buttons.html" th:href= "@{/categories}">Manage Category</a>
@@ -54,8 +76,21 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - added table bootstrap Striped rows (categories.html line 341 - 358)
     - index.html line 41 <!-- Nav Item - Pages Collapse Menu -->
 
+    - show from the database <tr th:each="category : ${categories}">, line 39
+    - <th scope="row" th:text="${category.id}"></th> -refering to Category Class
+    - link PostMapping to line 30, do the action --> 
+            <div th:if = "${success}" class="text-center alert alert-success"></div> -> Notification
+            <p th:text="${success}"></p> -> text in success in CateController
+
 ### 2.2 Product
     - Model (Product)
+
+## 3. Add Principal for Security
+        if (principal == null){
+            return "redirect:/login";
+        }
+
+
 
 
 
