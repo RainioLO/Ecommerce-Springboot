@@ -19,7 +19,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav th:replace = "fragments :: topbar"></nav>
+                <nav th:replace = "fragments :: top-navbar"></nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -38,6 +38,7 @@
                     <tr>
                         <th scope="col">Category Index</th>
                         <th scope="col">Category Name</th>
+                        <th scope="col">Edit Category Name</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -45,7 +46,9 @@
                     <tr th:each="category : ${categories}">
                         <th scope="row" th:text="${category.id}"></th>
                         <td th:text="${category.name}"></td>
-                        <td></td>
+                        <td>
+                            <a id="editButton" th:href="@{/findById(id = ${category.id})}" class="btn btn-primary">Update</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -68,7 +71,7 @@
 
         <!-- Add Modal-->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <form th:action="@{/add-category}" method="post" th:object="${categoryNew}">
+            <form th:action="@{/save-category}" method="post" th:object="${categoryNew}">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -89,6 +92,38 @@
             </form>
         </div>
         <!-- End of Add Modal-->
+
+        <!-- Change Name Category Modal Modal-->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalExample" aria-hidden="true">
+            <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Category</h5>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label for="idEdit" class="col-form-label">Id:</label>
+                                <input type="text" class="form-control" id="idEdit" name="idEdit">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameEdit" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="nameEdit" name="nameEdit">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <!-- End of Edit Modal-->
+
+
+
+
     <!-- Bootstrap core JavaScript-->
         <div th:replace = "fragments :: script"></div>
 

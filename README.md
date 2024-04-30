@@ -65,8 +65,6 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - --> line 65,74.79 submit -> action -> method -> object
         <button type="submit" class="btn btn-primary">Save</button>
 
-
-
 #### 2.1.1 Category Layout
     - index.html line 51 <a class="collapse-item" href="buttons.html" th:href= "@{/categories}">Manage Category</a>
         --> replace buttons.html with categories.html --> new layout
@@ -90,8 +88,26 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
             return "redirect:/login";
         }
 
+---
 
-
+# <b> 30/04/2024 </b>
+## 1. Categories Edit Function (CRUD)
+    - add update button line 49
+      <a id="editButton" th:href="@{/getById/(id=${category.id})}class="btn btn-primary">Update</a>
+    
+    - show the data in the mainlayout 
+        <tbody>
+            <tr th:each="category : ${categories}">
+                <th scope="row" th:text="${category.id}"></th>
+                <td th:text="${category.name}"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    
+    - add Update button, line 50
+        <a id="editButton" th:href="@{/getById/(id = ${category.id})}" class="btn btn-primary">Update</a>
+    - find the object by id -> JSON response body
+    - 
 
 
 
