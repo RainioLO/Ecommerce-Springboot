@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.security.Principal;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 public class CategoryController {
@@ -55,7 +56,6 @@ public class CategoryController {
             redirectAttributes.addFlashAttribute("error", "The category cannot be null.");
             return "redirect:/categories";
         }
-    
         try {
             categoryService.save(category);
             redirectAttributes.addFlashAttribute("success", "Category added successfully!");
@@ -71,9 +71,24 @@ public class CategoryController {
 
     @RequestMapping(value = "/findById", method = {RequestMethod.GET, RequestMethod.PUT})
     @ResponseBody
-    public Category findById(Long id){
+    public Optional<Category> findById(Long id){
         return categoryService.findById(id);
     }
+
+    @GetMapping("/update-category")
+    public String update(Category category, RedirectAttributes redirectAttributes){
+        try{ // categories.html link with <form th:action="@{/update-category}" method="put">
+            categoryService.update(category); //update with responseBody from /findById
+            redirectAttributes.addFlashAttribute("success", "Updated successfully"); // redirect with "success"
+        } catch (DataIntegrityViolationException e){
+            e.printStackTrace();
+            redirectAttributes.addFlashAttribute("failed", "Fail in Updating Category because duplicate name"); // redirect with "failed"
+        } catch (Exception e){
+            e.printStackTrace();
+            redirectAttributes.addFlashAttribute("failed", "Error server"); // redirect with "failed"
+        }
+        return "redirect:/categories"; // direct to /categories endpoint after update
+        }
 
     private void logError(Exception e, String message) {
         Logger logger = LoggerFactory.getLogger(CategoryController.class);

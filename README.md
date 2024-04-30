@@ -107,7 +107,29 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - add Update button, line 50
         <a id="editButton" th:href="@{/getById/(id = ${category.id})}" class="btn btn-primary">Update</a>
     - find the object by id -> JSON response body
-    - 
+    - do findById in CategoryController
+    
+    - enable the click function -> call /findById when clicked
+        <a id="editButton"
+            th:href="@{/findById(id = ${category.id})}"class="btn btn-primary">
+        Update</a>
+    - --> responsebody (Category JSON) --> link .js and Edit Category Modal
+    - --> create js redirect to this .js <script th:scr="@{/js/categories.js}"></script>
+
+    - click -> call findById -> .js + Edit Modal
+
+        # default fill in
+        add constraint "readonly" 
+        <input type="text" class="form-control" id="nameEdit" name="name"> * name should be the same as the table shown
+    
+### 1.1 Category link with html
+    - <form th:action="@{/update-category}" method="put"> categories.html line 99
+    - Save to do the th:action
+    - href show the data, action , 
+
+    - fail and success redirectdistrubutes
+
+    
 
 
 

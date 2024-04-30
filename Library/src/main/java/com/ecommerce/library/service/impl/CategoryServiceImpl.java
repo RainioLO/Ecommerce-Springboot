@@ -38,16 +38,22 @@ public class CategoryServiceImpl implements CategoryService {
     // }
 
     @Override
-    public Category findById(Long id){
-        return categoryRepository.findById(id).get();
+    public Optional<Category> findById(Long id){
+        return categoryRepository.findById(id);
     }
 
     @Override
     public Category update(Category category) { // in a reference Object, and add modified object into the database
-        Category categoryUpdate = categoryRepository.getReferenceById(category.getId());
-        categoryUpdate.setName(category.getName());
-        categoryUpdate.set_activated(category.is_activated());
-        categoryUpdate.set_deleted(category.is_deleted());
+        Category categoryUpdate = null; // input the responseBody from the findById ??
+        try {
+            categoryUpdate = categoryRepository.findById(category.getId()).get(); //onlyread to the category
+            categoryUpdate.setName(category.getName()); //still that object , the responseBody, when changes through js -> return the name to the new object and save
+            categoryUpdate.set_activated(category.is_activated());
+            categoryUpdate.set_deleted(category.is_deleted());
+            return categoryRepository.save(categoryUpdate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return categoryRepository.save(categoryUpdate);
     }
 
