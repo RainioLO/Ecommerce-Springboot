@@ -59,7 +59,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteById(Long id) {
-        Category category = categoryRepository.getReferenceById(id);
+        Category category = categoryRepository.getReferenceById(id); // get the category object from database, change status and save to the database
         category.set_activated(false);
         category.set_deleted(true);
         categoryRepository.save(category);

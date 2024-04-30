@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3286e6f2-824d-4d12-924c-288f15d7108e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>

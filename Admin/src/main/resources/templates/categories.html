@@ -39,6 +39,7 @@
                     <th scope="col">Category Index</th>
                     <th scope="col">Category Name</th>
                     <th scope="col">Edit</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,18 @@
                         <a id="editButton"
                            th:href="@{/findById(id = ${category.id})}"
                            class="btn btn-primary">Update</a>
+                    </td>
+                    <td>
+                        <a id="deleteButton"
+                           th:if = "${category.is_activated} == true"
+                           th:href="@{/delete-category(id = ${category.id})}" 
+                           class="btn btn-danger">Delete
+                        </a>
+                        <a id="enableButton"
+                           th:if = "${category.is_activated} == false"
+                           th:href="@{/enable-category(id = ${category.id})}" 
+                           class="btn btn-primary">Enable
+                        </a>
                     </td>
                 </tr>
                 </tbody>
@@ -122,6 +135,12 @@
     </div>
 </div>
     <!-- End of Edit Modal-->
+
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript-->
     <div th:replace="fragments :: script"></div>

@@ -117,6 +117,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - --> create js redirect to this .js <script th:scr="@{/js/categories.js}"></script>
 
     - click -> call findById -> .js + Edit Modal
+    - the js link the modal and the Begin Page Content 
 
         # default fill in
         add constraint "readonly" 
@@ -129,6 +130,23 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
 
     - fail and success redirectdistrubutes
 
+## 2. Delete Function
+    - Method: @RequestMapping(value = "/delete-category", method = {RequestMethod.GET, RequestMethod.PUT})
+    - Add Button:   <td>
+                        <a id = "deleteButton" 
+                           th:if = "${category.is_activated} == true"
+                           th:href="@{/delete-category(id = ${category.id})}" 
+                           class="btn btn-danger">Delete</a>
+                    </td>
+
+## 3. Enable Function
+    - Method: @RequestMapping(value = "/enable-category", method = {RequestMethod.GET, RequestMethod.PUT})
+    - Add Button:  <a id="enableButton" 
+                      th:if = "${category.is_activated} == false"
+                      th:href="@{/enable-category(id = ${category.id})}" 
+                      class="btn btn-primary">Enable
+                   </a>
+    -  --> show the result with th:href
     
 
 

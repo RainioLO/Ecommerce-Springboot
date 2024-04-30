@@ -78,6 +78,7 @@ public class CategoryController {
     @GetMapping("/update-category")
     public String update(Category category, RedirectAttributes redirectAttributes){
         try{ // categories.html link with <form th:action="@{/update-category}" method="put">
+            category.set_activated(true);
             categoryService.update(category); //update with responseBody from /findById
             redirectAttributes.addFlashAttribute("success", "Updated successfully"); // redirect with "success"
         } catch (DataIntegrityViolationException e){
@@ -89,6 +90,32 @@ public class CategoryController {
         }
         return "redirect:/categories"; // direct to /categories endpoint after update
         }
+        
+    @RequestMapping(value = "/delete-category", method = {RequestMethod.GET, RequestMethod.PUT})
+    public String delete(Long id, RedirectAttributes redirectAttributes) {
+        try {
+            categoryService.deleteById(id);
+            redirectAttributes.addFlashAttribute("success", "Category deleted successfully!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error occurred on the server.");
+            logError(e, "Exception: Error occurred on the server.");
+        }
+        return "redirect:/categories";
+        }
+
+    @RequestMapping(value = "/enable-category", method = {RequestMethod.GET, RequestMethod.PUT})
+    public String enable(Long id, RedirectAttributes redirectAttributes) {
+        try {
+            categoryService.enabledById(id);
+            redirectAttributes.addFlashAttribute("success", "Category enabled successfully!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error occurred on the server.");
+            logError(e, "Exception: Error occurred on the server.");
+        }
+        return "redirect:/categories";
+        }
+
+
 
     private void logError(Exception e, String message) {
         Logger logger = LoggerFactory.getLogger(CategoryController.class);
