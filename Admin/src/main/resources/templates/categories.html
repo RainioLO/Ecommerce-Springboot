@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head th:replace="fragments :: header"></head>
-
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -23,16 +21,19 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleAddCategoryModal"
+                    data-whatever="@mdo">Add new category
+            </button>
             <div th:if="${size == 0}">
                 <p>No categories found.</p>
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add new category</button>
-            <div th:if="${success}" class="alert alert-success" role="alert">
+            <div th:if="${success}" class="text-center alert alert-success">
                 <p th:text="${success}"></p>
             </div>
-            <div th:if="${failed}" class="alert alert-danger" role="alert">
-                <p th:text="${failed}"></p>
+            <div th:if="${error}" class="text-center alert alert-danger">
+                <p th:text="${error}"></p>
             </div>
+
             <table class="table table-striped" th:if="${size > 0}">
                 <thead>
                 <tr>
@@ -53,13 +54,13 @@
                     </td>
                     <td>
                         <a id="deleteButton"
-                           th:if = "${category.is_activated} == true"
-                           th:href="@{/delete-category(id = ${category.id})}" 
+                           th:if="${category.is_activated} == true"
+                           th:href="@{/delete-category(id = ${category.id})}"
                            class="btn btn-danger">Delete
                         </a>
                         <a id="enableButton"
-                           th:if = "${category.is_activated} == false"
-                           th:href="@{/enable-category(id = ${category.id})}" 
+                           th:if="${category.is_activated} == false"
+                           th:href="@{/enable-category(id = ${category.id})}"
                            class="btn btn-primary">Enable
                         </a>
                     </td>
@@ -84,31 +85,34 @@
     <!-- Logout Modal-->
 
     <!-- Add Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form th:action="@{/save-category}" method="post" th:object="${categoryNew}">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New Category</h5>
-                    </div>
-                    <div class="modal-body">
+    <div class="modal fade" id="exampleAddCategoryModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleAddCategoryModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleAddCategoryModalLabel">New Category</h5>
+                </div>
+                <div class="modal-body">
+                    <form th:action="@{/save-category}" method="post">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" th:field="*{name}" id="recipient-name">
+                            <label for="name" class="col-form-label">Category Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
     <!-- End of Add Modal-->
 
     <!-- Edit Category Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+         aria-hidden="true">
         <form th:action="@{/update-category}" method="put">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -134,17 +138,11 @@
         </form>
     </div>
 </div>
-    <!-- End of Edit Modal-->
+<!-- End of Edit Modal-->
 
-
-
-
-
-
-
-    <!-- Bootstrap core JavaScript-->
-    <div th:replace="fragments :: script"></div>
-    <script th:src="@{/js/categories.js}"></script>
+<!-- Bootstrap core JavaScript-->
+<div th:replace="fragments :: script"></div>
+<script th:src="@{/js/categories.js}"></script>
 
 </body>
 

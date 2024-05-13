@@ -147,7 +147,12 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
                       class="btn btn-primary">Enable
                    </a>
     -  --> show the result with th:href
-    
+
+# <b> 13/05/2024 </b>
+## 1. "Products" Function (CRUD)
+    - th:href = "@{/products} got to the @GetMapping("/products")
+    - <a class="collapse-item" href="cards.html" th:href = "@{/products}>Manage Product</a>
+    - href="products.html" (return "products";)
 
 
 

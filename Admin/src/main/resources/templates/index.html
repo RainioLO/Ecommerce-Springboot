@@ -1,57 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace = "~{fragments::header}"></head>
+<head th:replace="~{fragments::header}"></head>
 <body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul th:replace = "~{fragments::sidebar}"></ul>
-        <!-- End of Sidebar -->
+    <!-- Sidebar -->
+    <ul th:replace="~{fragments::sidebar}"></ul>
+    <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+        <!-- Main Content -->
+        <div id="content">
 
-                <!-- Topbar -->
-                <nav  th:replace = "~{fragments::top-navbar}"></nav>
+            <!-- Topbar -->
+            <nav th:replace="~{fragments::top-navbar}"></nav>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                </div>
-                <!-- /.container-fluid -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer th:replace = "~{fragments::footer}"></footer>
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer th:replace="~{fragments::footer}"></footer>
+        <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a th:replace = "~{fragments::scroll}"></a>
+</div>
+<!-- End of Page WrapperF -->
+
+<!-- Scroll to Top Button-->
+<a th:replace="~{fragments::scroll}"></a>
 
 <!--    &lt;!&ndash; Logout Modal&ndash;&gt;-->
 <!--    <div th:replace = "fragments :: logoutModal"></div>-->
 
-    <div th:replace = "~{fragments::script}"></div>>
+<div th:replace="~{fragments::script}"></div>
+>
 
-    <!-- Page level plugins -->
-    <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+<!-- Page level plugins -->
+<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
-    <!-- Page level custom scripts -->
-    <script th:src="@{/js/demo/chart-area-demo.js}"></script>
-    <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
+<!-- Page level custom scripts -->
+<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
 
 </body>
 

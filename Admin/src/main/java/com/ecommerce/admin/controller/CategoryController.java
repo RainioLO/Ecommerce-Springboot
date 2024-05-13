@@ -52,45 +52,48 @@ public class CategoryController {
 
     @PostMapping("/save-category")
     public String save(@ModelAttribute("categoryNew") Category category, RedirectAttributes redirectAttributes) {
-        if (category == null) {
-            redirectAttributes.addFlashAttribute("error", "The category cannot be null.");
-            return "redirect:/categories";
-        }
+
         try {
+            if (category == null) {
+                redirectAttributes.addFlashAttribute("error", "The category cannot be null.");
+                return "redirect:/categories";
+            }
             categoryService.save(category);
             redirectAttributes.addFlashAttribute("success", "Category added successfully!");
         } catch (DataIntegrityViolationException e) {
             redirectAttributes.addFlashAttribute("error", "Duplicate name of category, please check again!");
-            logError(e, "DataIntegrityViolationException: Duplicate category name.");
+            // logError(e, "DataIntegrityViolationException: Duplicate category name.");
+            // return "redirect:/categories"; // Ensure redirect here
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Error occurred on the server.");
-            logError(e, "Exception: Error occurred on the server.");
+            // logError(e, "Exception: Error occurred on the server.");
+            // return "redirect:/categories"; // Ensure redirect here
         }
         return "redirect:/categories";
     }
 
     @RequestMapping(value = "/findById", method = {RequestMethod.GET, RequestMethod.PUT})
     @ResponseBody
-    public Optional<Category> findById(Long id){
+    public Optional<Category> findById(Long id) {
         return categoryService.findById(id);
     }
 
     @GetMapping("/update-category")
-    public String update(Category category, RedirectAttributes redirectAttributes){
-        try{ // categories.html link with <form th:action="@{/update-category}" method="put">
+    public String update(Category category, RedirectAttributes redirectAttributes) {
+        try { // categories.html link with <form th:action="@{/update-category}" method="put">
             category.set_activated(true);
             categoryService.update(category); //update with responseBody from /findById
             redirectAttributes.addFlashAttribute("success", "Updated successfully"); // redirect with "success"
-        } catch (DataIntegrityViolationException e){
+        } catch (DataIntegrityViolationException e) {
             e.printStackTrace();
-            redirectAttributes.addFlashAttribute("failed", "Fail in Updating Category because duplicate name"); // redirect with "failed"
-        } catch (Exception e){
+            redirectAttributes.addFlashAttribute("error", "Fail in Updating Category because duplicate name"); // redirect with "failed"
+        } catch (Exception e) {
             e.printStackTrace();
-            redirectAttributes.addFlashAttribute("failed", "Error server"); // redirect with "failed"
+            redirectAttributes.addFlashAttribute("error", "Error server"); // redirect with "failed"
         }
         return "redirect:/categories"; // direct to /categories endpoint after update
-        }
-        
+    }
+
     @RequestMapping(value = "/delete-category", method = {RequestMethod.GET, RequestMethod.PUT})
     public String delete(Long id, RedirectAttributes redirectAttributes) {
         try {
@@ -101,20 +104,19 @@ public class CategoryController {
             logError(e, "Exception: Error occurred on the server.");
         }
         return "redirect:/categories";
-        }
+    }
 
     @RequestMapping(value = "/enable-category", method = {RequestMethod.GET, RequestMethod.PUT})
     public String enable(Long id, RedirectAttributes redirectAttributes) {
         try {
-            categoryService.enabledById(id);
+            categoryService.enabledById(id); // redirect with the flashAttribute
             redirectAttributes.addFlashAttribute("success", "Category enabled successfully!");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Error occurred on the server.");
             logError(e, "Exception: Error occurred on the server.");
         }
         return "redirect:/categories";
-        }
-
+    }
 
 
     private void logError(Exception e, String message) {
