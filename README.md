@@ -207,6 +207,30 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
            </option>
        </select>
 
+### 1.3 Add product Form save Function
+
+#### 1.3.1 Image Upload
+    - Stored in static//img//image-product
+    - ImageUpload in utils
+    - ImageUpload Class
+    - ProductServiceImpl line 38
+    -       <td>
+                <img class="my-product-image" style="height: 40px; width: 40px;" alt=""
+                   th:src="'data:image/jpeg;base64,' + ${product.image}">
+             </td>
+
+#### 1.3.2 Save Product
+    -  <form class="form-horizontal" th:action="@{/save-product}" method="post" enctype="multipart/form-data"
+                                     th:object = "${product}">
+    - action, object, ...
+    - save-product(attach to the form) in the add-product form
+    - @PostMapping("/save-product")
+      public String saveProduct(@ModelAttribute("product") ProductDto productDto, // the "product" from add-product attributes "product"
+            @RequestParam("imageProduct")MultipartFile imageProduct, 
+            RedirectAttributes attributes){
+    - bind the add form to the save field with th:field line 37, 70, 88 like th:field = "*{name}"
+    - attributes.addFlashAttribute("success", "Add Successfully"); line 28-33 products.html
+
 
 
 

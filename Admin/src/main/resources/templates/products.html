@@ -24,12 +24,18 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
+                <a th:href="@{/add-product}" class="btn btn-primary">Add Product</a>
                 <p th:if="${size == 0} ">No Products</p>
-                <a class="btn btn-primary" th:href = "@{/add-product}">Add new product</a>
-                <table class="table table-striped" th:if="${size>0}">
+                <div th:if="${success}" class="text-center alert alert-success">
+                    <p th:text="${success}"></p>
+                </div>
+                <div th:if="${error}" class="text-center alert alert-danger">
+                    <p th:text="${error}"></p>
+                </div>
+                <table class="table table-bordered" th:if="${size > 0}">
                     <thead>
                     <tr>
-                        <th scope="col">Product Name</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
@@ -39,32 +45,33 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each = "product : ${products}">
-                        <th scope="row" th:text = "${product.name}"></th>
-                        <td th:text = "${product.category.name}"></td>
-                        <td th:text = "${product.costPrice}"></td>
-                        <td th:text = "${product.currentQunatity}"></td>
-                        <td></td>
+                    <tr th:each="product : ${products}">
+                        <th scope="row" th:text="${product.name}"></th>
+                        <td th:text="${product.category.name}"></td>
+                        <td th:text="${product.costPrice}"></td>
+                        <td th:text="${product.currentQuantity}"></td>
+                        <td>
+                            <img class="my-product-image" style="height: 40px; width: 40px;" alt=""
+                                 th:src="'data:image/jpeg;base64,' + ${product.image}">
+                        </td>
                         <td></td>
                     </tr>
                     </tbody>
                 </table>
-
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer th:replace="fragments :: footer"></footer>
-            <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
+
+        <!-- Footer -->
+        <footer th:replace="fragments :: footer"></footer>
+        <!-- End of Footer -->
 
     </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a th:replace="fragments :: scroll"></a>
     <!-- Logout Modal-->
 
 
@@ -73,6 +80,7 @@
 
 
 </div>
+<a th:replace="fragments :: scroll"></a>
 <!-- End of Edit Modal-->
 
 <!-- Bootstrap core JavaScript-->

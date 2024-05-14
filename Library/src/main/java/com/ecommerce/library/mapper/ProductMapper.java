@@ -22,5 +22,17 @@ public class ProductMapper {
         return productDto;
     }
 
+    public static Product productDtoMapper(ProductDto productDto){
+        Product product = new Product();
+        product.setName(productDto.getName());
+        product.setDescription(productDto.getDescription());
+        product.setCurrentQuantity(productDto.getCurrentQuantity());
+        product.setCostPrice(productDto.getCostPrice());
+        product.setCategory(productDto.getCategory());
+        product.set_deleted(false);
+        product.set_activated(true);
+        return product;
+    }
+
 
 }
