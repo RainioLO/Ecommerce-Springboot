@@ -1,6 +1,7 @@
 package com.ecommerce.library.service.impl;
 
 import com.ecommerce.library.dto.ProductDto;
+import com.ecommerce.library.mapper.ProductMapper;
 import com.ecommerce.library.model.Product;
 import com.ecommerce.library.repository.ProductRepository;
 import com.ecommerce.library.service.ProductService;
@@ -21,17 +22,7 @@ public class ProductServiceImpl implements ProductService {
         List<ProductDto> productDtoList = new ArrayList<>();
         List<Product> products = productRepository.findAll();
         for (Product product : products){
-            ProductDto productDto = new ProductDto();
-            productDto.setId(product.getId());
-            productDto.setName(product.getName());
-            productDto.setDescription(product.getDescription());
-            productDto.setCostPrice(product.getCostPrice());
-            productDto.setSalePrice(product.getSalePrice());
-            productDto.setCurrentQuantity(product.getCurrentQuantity());
-            productDto.setCategory(product.getCategory());
-            productDto.setImage(product.getImage());
-            productDto.setActivated(product.is_activated());
-            productDto.setDeleted(product.is_deleted());
+            ProductDto productDto = ProductMapper.productMapper(product);
             productDtoList.add(productDto);
         }
         return productDtoList;

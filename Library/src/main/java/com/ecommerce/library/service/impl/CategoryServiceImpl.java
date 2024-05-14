@@ -22,11 +22,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category save(Category category) { // someone pass by model attribute , an object
-        try{
+        try {
             Category categorySave = new Category(category.getName()); // new an object and save
             // categorySave.set_deleted(true);
             return categoryRepository.save(categorySave);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
     // }
 
     @Override
-    public Optional<Category> findById(Long id){
+    public Optional<Category> findById(Long id) {
         return categoryRepository.findById(id);
     }
 
@@ -72,4 +72,10 @@ public class CategoryServiceImpl implements CategoryService {
         category.set_deleted(false);
         categoryRepository.save(category);
     }
+
+    @Override
+    public List<Category> findAllByActivated() {
+        return categoryRepository.findAllByActivatedTrue();
+    }
+
 }

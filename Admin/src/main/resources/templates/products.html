@@ -24,6 +24,32 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
+                <p th:if="${size == 0} ">No Products</p>
+                <a class="btn btn-primary" th:href = "@{/add-product}">Add new product</a>
+                <table class="table table-striped" th:if="${size>0}">
+                    <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each = "product : ${products}">
+                        <th scope="row" th:text = "${product.name}"></th>
+                        <td th:text = "${product.category.name}"></td>
+                        <td th:text = "${product.costPrice}"></td>
+                        <td th:text = "${product.currentQunatity}"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
             <!-- End of Main Content -->
 

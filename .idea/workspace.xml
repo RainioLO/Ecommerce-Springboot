@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3286e6f2-824d-4d12-924c-288f15d7108e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/cards.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/forgot-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/ecommerce/admin/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-border.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-border.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-other.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/utilities-other.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/ecommerce/library/service/impl/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,32 +46,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AdminApplication.executor": "Run",
-    "Application.Test.executor": "Debug",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AdminApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rain/github/Ecommerce-Springboot/Admin/src/main/resources/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Debug&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rain/github/Ecommerce-Springboot/Admin/src/main/resources/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rain\github\Ecommerce-Springboot\Admin\src\main\resources\templates" />

@@ -1,7 +1,11 @@
 # Ecommerce by Springboot
+
 ___
+
 # <b> 23/04/2024 </b>
+
 ## 1. Log-out function
+
     - Location: LoginController line 60
     .logoutSuccessUrl("/login?logout") --> locate at index.html
     --> redirect to Login.html with <a class="btn btn-primary" 
@@ -11,20 +15,25 @@ ___
     </div> # login.html line 47
 
 ## 2. fragments handling
+
     -<head th:fragment="header"> -- fragments.html
     -<head th:replace="fragments :: header"> 
         -> used in forgot-password.html, etc 
     </head>
     -replace the header and script with fragment.html
+
 <br> <!-- Empty line or line break -->
 
 ###### Github
+
 git commit --amend --author="New Committer Name <newcommitter@example.com>" / git push --force
 
 ---
 
 # <b> 29/04/2024 </b>
+
 ## 1. html configuration with leaf
+
     -index, login, register, forgot-password, 
         replace with <div th:replace = "script"></div>, 
         <head th:replace = "fragments::header">
@@ -35,6 +44,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     -<div th:replace = "fragments::script" ></div>
 
 ## 2. Create Product and Category
+
     - Many to one for Product to Category
     - CategoryRepository, ProductRepo for data entry
     - service layer -> call repo to help data treatment
@@ -43,6 +53,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - sidebar index.html line 13
 
 ### 2.1 Category
+
     - Model (Category)
     - repo(categoryRepo)
     - controller (GetMapping: /categories)
@@ -66,6 +77,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
         <button type="submit" class="btn btn-primary">Save</button>
 
 #### 2.1.1 Category Layout
+
     - index.html line 51 <a class="collapse-item" href="buttons.html" th:href= "@{/categories}">Manage Category</a>
         --> replace buttons.html with categories.html --> new layout
         --> with controller --> access index 
@@ -81,9 +93,11 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
             <p th:text="${success}"></p> -> text in success in CateController
 
 ### 2.2 Product
+
     - Model (Product)
 
 ## 3. Add Principal for Security
+
         if (principal == null){
             return "redirect:/login";
         }
@@ -91,7 +105,9 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
 ---
 
 # <b> 30/04/2024 </b>
+
 ## 1. Categories Edit Function (CRUD)
+
     - add update button line 49
       <a id="editButton" th:href="@{/getById/(id=${category.id})}class="btn btn-primary">Update</a>
     
@@ -122,8 +138,9 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
         # default fill in
         add constraint "readonly" 
         <input type="text" class="form-control" id="nameEdit" name="name"> * name should be the same as the table shown
-    
+
 ### 1.1 Category link with html
+
     - <form th:action="@{/update-category}" method="put"> categories.html line 99
     - Save to do the th:action
     - href show the data, action , 
@@ -131,6 +148,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
     - fail and success redirectdistrubutes
 
 ## 2. Delete Function
+
     - Method: @RequestMapping(value = "/delete-category", method = {RequestMethod.GET, RequestMethod.PUT})
     - Add Button:   <td>
                         <a id = "deleteButton" 
@@ -140,6 +158,7 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
                     </td>
 
 ## 3. Enable Function
+
     - Method: @RequestMapping(value = "/enable-category", method = {RequestMethod.GET, RequestMethod.PUT})
     - Add Button:  <a id="enableButton" 
                       th:if = "${category.is_activated} == false"
@@ -148,11 +167,45 @@ git commit --amend --author="New Committer Name <newcommitter@example.com>" / gi
                    </a>
     -  --> show the result with th:href
 
-# <b> 13/05/2024 </b>
+# <b> 14/05/2024 </b>
+
 ## 1. "Products" Function (CRUD)
+
+### 1.1 Link the controller to the products.html
+
     - th:href = "@{/products} got to the @GetMapping("/products")
-    - <a class="collapse-item" href="cards.html" th:href = "@{/products}>Manage Product</a>
-    - href="products.html" (return "products";)
+    - <a class="btn btn-primary" th:href = "@{/add-product}">Add new product</a>  // <a button ... not correct, need to be a link direct to the form
+    - href="products.html" (return "products";) 
+    - <div th:if = "${size == 0}">
+        <p>No Product in shop</p>
+      </div>  size/ products --> link with model attributes
+    - <tr th:each = "product : ${products}"> show each item in the list
+
+### 1.2 Add add-product form function
+
+    - add product bootstrap with form
+    - ADD the add-product form with button
+    - <a class="btn btn-primary" th:href = "@{/add-product}">Add new product</a>
+
+#### 1.2.1 Add add-product form submit button
+
+    - <button type = "submit" class="btn btn-primary">Save</button>
+
+#### 1.2.2 Add Category select field
+
+    - @Autowired private CategoryService categoryService;
+    - @Query(value = "select * from categories where is_activated = true", nativeQuery = true)
+      List<Category> findAllByActivatedTrue();
+    - public List<Category> findAllByActivated() {
+        return categoryRepository.findAllByActivated();
+      }
+    -  <select id="categories" name="categories" class="form-control">
+        <option>-SELECT-</option>
+        <option th:each = "category : ${categories}"
+                th:value = "${category.id}"
+                th:text = "${category.name}">
+           </option>
+       </select>
 
 
 
